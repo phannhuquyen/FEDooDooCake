@@ -1,0 +1,37 @@
+@import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@theme {
+  --font-primary: "Plus Jakarta Sans", sans-serif;
+  /* hồng */
+  --color-highlight: #ee2b7c;
+
+  --color-primary: #333333;
+
+  --color-success-bg: #dcfce7;
+  --color-success-text: #00540f;
+  --color-success-border: #00540f;
+
+  --color-error-bg: #ffe2e2;
+  --color-error-text: #e7000b;
+  --color-error-border: #e7000b;
+
+  --color-cancel: #6c757d;
+
+  /* vàng */
+  --color-pending: #ffc107;
+
+  /* vàng */
+  --color-processing-bg: #fef9c2;
+  --color-processing-text: #7d2c00;
+  --color-processing-border: #7d2c00;
+}
+
+@layer base {
+  html {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+  }
+}
