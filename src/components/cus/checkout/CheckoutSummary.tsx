@@ -37,9 +37,10 @@ const CheckoutSummary = ({
 }: Props) => {
   const [promotionCode, setPromotionCode] = useState("");
 
-  const [promotionValue, setPromotionValue] = useState(0);
+  // const [promotionValue, setPromotionValue] = useState(0);
+  const promotionValue = 0;
 
-  const [promotionId, setPromotionId] = useState("");
+  // const [promotionId, setPromotionId] = useState("");
 
   const [loadingPromotion, setLoadingPromotion] = useState(false);
 

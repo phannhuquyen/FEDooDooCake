@@ -3,13 +3,13 @@ import axiosClient from "./axiosClient";
 const ORDER_URL = "https://doodoocake-api.onrender.com/api/orders";
 
 // của BE
-interface itemProps {
-  productId: string;
-  name: string;
-  images: string[];
-  quantity: number;
-  price: number;
-}
+// interface itemProps {
+//   productId: string;
+//   name: string;
+//   images: string[];
+//   quantity: number;
+//   price: number;
+// }
 
 export interface dataCreateOrder {
   userId: string;

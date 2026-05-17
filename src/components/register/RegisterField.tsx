@@ -43,7 +43,7 @@ const RegisterField = () => {
       }
 
       setLoading(true);
-      const res = await userApi.create(account);
+      await userApi.create(account);
       // console.log(res.data);
       setRegisterSuccess("Đăng ký thành công");
     } catch (error) {
