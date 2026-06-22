@@ -34,6 +34,20 @@ export const userApi = {
     return axiosClient.delete(`${USER_URL}/${id}`);
   },
 
+  // ========================
+  // Auth (reset password)
+  // ========================
+
+  // POST /auth/send-reset-otp
+  sendResetOtp: (data: { username: string; email: string }) => {
+    return axiosClient.post(`/auth/send-reset-otp`, data);
+  },
+
+  // POST /auth/reset-password
+  resetPassword: (data: { username: string; email: string; otp: string; newPassword: string }) => {
+    return axiosClient.post(`/auth/reset-password`, data);
+  },
+
   // GET /users/profile/:userId
   getById: (userId: string) => {
     return axiosClient.get(`${USER_URL}/profile/${userId}`);
