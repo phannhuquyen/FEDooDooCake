@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
+# DooDooCake Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Phần frontend của DooDooCake sử dụng React + TypeScript + Vite và kết nối với API backend để hiển thị sản phẩm, giỏ hàng, đặt hàng và quản trị.
 
-Currently, two official plugins are available:
+# DooDooCake — Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend của DooDooCake được xây dựng bằng React + TypeScript + Vite. Ứng dụng cung cấp giao diện khách hàng và admin để xem sản phẩm, quản lý giỏ hàng, đặt hàng, và quản trị sản phẩm/đơn hàng.
 
-## React Compiler
+Repository: https://github.com/phannhuquyen/FEDooDooCake.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Công nghệ chính
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Axios (kết nối API)
+- Socket.io-client
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Yêu cầu
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js >= 18
+- npm hoặc yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Cài đặt
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Mở terminal tại thư mục `FE` và chạy:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Biến môi trường
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Tạo file `.env` trong thư mục `FE` (hoặc dùng `.env.local`) với biến:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_API_URL=http://localhost:5001/api
 ```
+
+Thay `http://localhost:5001/api` bằng URL backend nếu cần (hoặc đường dẫn deploy).
+
+## Chạy ứng dụng
+
+- Chạy ở chế độ phát triển:
+
+```bash
+npm run dev
+```
+
+- Build production:
+
+```bash
+npm run build
+```
+
+- Xem bản build local:
+
+```bash
+npm run preview
+```
+
+## Cấu trúc chính
+
+- `src/main.tsx` — entry
+- `src/App.tsx` — route và layout
+- `src/api/axiosClient.ts` — cấu hình axios dùng `import.meta.env.VITE_API_URL`
+- `src/components` — component tái sử dụng
+- `src/pages` — các trang chính (khách hàng và admin)
+
+## Ghi chú
+
+- Đảm bảo backend (BE) đang chạy và `VITE_API_URL` trỏ tới đúng endpoint.
+- Nếu gặp cảnh báo liên quan tới dòng mới (LF/CRLF) trên Windows, xem README của repository gốc hoặc thêm `.gitattributes` để chuẩn hóa EOL.
+
+## Backend repository
+
+Backend của dự án: https://github.com/phannhuquyen/DooDooCake.git
+
+---
+
+Nếu bạn muốn tôi cập nhật thêm phần hướng dẫn deploy (Heroku/Vercel) hoặc thêm scripts tiện lợi, báo tôi biết.

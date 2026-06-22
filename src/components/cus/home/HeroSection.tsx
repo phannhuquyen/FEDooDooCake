@@ -1,4 +1,4 @@
-import MyButton from "../../buttons/MyButton";
+﻿import MyButton from "../../buttons/MyButton";
 
 const HeroSection = () => {
   return (
@@ -12,7 +12,8 @@ const HeroSection = () => {
         }}
       >
         <div className="flex flex-col gap-3 justify-center items-center">
-          <h1 className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+          <h1
+           style={{ fontFamily: "var(--font-primary) !important" , fontWeight: 800 }} className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
             Vị ngọt cho mọi khoảnh khắc
           </h1>
           <p className="text-white text-base font-normal leading-normal max-w-xl mx-auto @[480px]:text-lg">
